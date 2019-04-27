@@ -33,6 +33,9 @@ app.get('/', (req, res, next) => {
 app.get('/login', (req, res, next) => {
   res.render('login');
 });
+app.get('/newuser', (req, res, next) => {
+  res.render('newuser');
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
