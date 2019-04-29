@@ -1,6 +1,6 @@
 <div class="row justify-content-md-center">
   <div class="col-xs-12 col-sm-12 col-md-4">
-    <form action="/login" method="POST">
+    <form id="login" method="POST">
       <div class="form-group">
         <div class="input-group mb-2">
           <div class="input-group-prepend">
@@ -30,3 +30,17 @@
     <p class="text-center mt-2">Not registered yet? <a href="/register">Do register</a></p>
   </div>
 </div>
+<script type="text/javascript">
+  const formLogin = document.querySelector("#login")
+  const formData = new FormData(formLogin)
+
+  formLogin.addEventListener('submit', event => {
+    event.preventDefault()
+    fetch('api/sigin', {
+      method: 'POST',
+      body: formData
+    })
+    .then(res => res.json())
+    .then(data => console.log(data))
+  })
+</script>
