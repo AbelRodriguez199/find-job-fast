@@ -1,0 +1,12 @@
+  <tr>
+  <td class="mb-2">{{ offer.id }}</td>
+  <td class="mb-2">{{ offer.post }}</td>
+  <td class="mb-2">{{ offer.description }}</td>
+  <td class="mb-2">{{ offer.requirements }}</td>
+  <td class="mb-2">{{ offer.salary }}</td>
+  <td class="mb-2">{{ offer.endOffer }}</td>
+  <td>
+    <a href="/edit/{{offer.id}}" class="btn btn-info mb-1">Editar</a>
+    <a href="/delete/{{offer._id}}" class="btn btn-danger mb-1">Borrar</a>
+  </td>
+  </tr>

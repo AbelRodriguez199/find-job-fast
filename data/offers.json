@@ -1,0 +1,13 @@
+[
+    {
+      "post": "Programador web",
+      "description": "Programador encargado de las webs de la empresa",
+      "requirements": [
+        "Html",
+        "Css",
+        "JavaScript"
+      ],
+      "salary": "18000",
+      "endOffer": "15/05/2019"
+    }
+  ] 
