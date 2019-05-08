@@ -1,0 +1,35 @@
+<%- layout('layouts/main') %>
+<p class="mt-4"></p>
+<table class="table table-striped col-md-12" align="center">
+        <h2 align="center">OFERTAS</h2>
+      <thead>
+        <tr>
+          <th scope="col">Puesto</th>
+          <th scope="col">Descripcion</th>
+          <th scope="col">Requisitos</th>
+          <th scope="col">Salario</th>
+          <th scope="col">Fin de Oferta</th>
+          <th scope="col">Operación</th>
+        </tr>
+      </thead>
+      <tbody>
+          <% for(var i = 0; i< offers.length; i++) { %>
+            <tr>
+                <td class="mb-2"><%= (offers[i].post) %></td>
+                <td class="mb-2"><%= (offers[i].description) %></td>
+                <td class="mb-2"><%= (offers[i].requirements) %></td>
+                <td class="mb-2"><%= (offers[i].salary) %></td>
+                <td class="mb-2"><%= (offers[i].endOffer.getDate()) %> / <%= (offers[i].endOffer.getMonth())+1 %> / <%= (offers[i].endOffer.getYear())+1900 %></td>
+                <td>
+                  <a href="/edit/{{offer.id}}" class="btn btn-info mb-1">Editar</a>
+                  <a href="/delete/{{offer.id}}" class="btn btn-danger mb-1">Borrar</a>
+                </td>
+                </tr>
+        <%}%>
+
+         
+      </tbody>
+    </table>
+    
+
+
