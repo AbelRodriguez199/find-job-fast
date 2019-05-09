@@ -23,7 +23,8 @@ router.get('/delete/:id', (req, res,) => {
   .catch((err) => {res.redirect('/'), err})
 });
 router.get('/edit/:id', (req, res, next) => {
-  Offer.findOne({_id: req.query.offer_id})
+  const { id } = req.params;
+  const offer = Offer.findById(id)
   .then((offer) => {
     res.render("edit-offer", {offer});
   })
@@ -31,17 +32,13 @@ router.get('/edit/:id', (req, res, next) => {
     console.log(error);
   })
 });
-
-router.post('/edit/:id', (req, res, next) => {
-  const { puesto, descripcion, requisitos, salario } = req.body;
-  Offer.update({_id: req.query.offer_id}, { $set: {puesto, descripcion, requisitos, salario }})
-  .then((offer) => {
-    res.redirect('/');
-  })
-  .catch((error) => {
-    console.log(error);
-  })
+router.post('/update/:id', (req, res,) => {
+  const { id } = req.params;
+  Offer.update({_id: id}, req.body)
+  .then((offer) => {res.redirect('/')})
+  .catch((err) => {res.redirect('/'), err})
 });
+
 router.get('/signup', (req, res, next) => {
   res.render('signup');
 });

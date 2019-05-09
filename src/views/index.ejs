@@ -24,7 +24,7 @@
                 <td class="mb-2"><%= (offers[i].endOffer.getDate()) %> / <%= (offers[i].endOffer.getMonth())+1 %> / <%= (offers[i].endOffer.getYear())+1900 %></td>
                 <td>
                     <% if (user) { %>
-                  <a href="/edit/{{offer.id}}" class="btn btn-info mb-1">Editar</a>
+                  <a href="/edit/<%= (offers[i].id) %>" class="btn btn-info mb-1">Editar</a>
                   <a href="/delete/<%= (offers[i].id) %>" class="btn btn-danger mb-1">Borrar</a>
                   <% } %>
                 </td>
