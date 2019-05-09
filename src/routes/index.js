@@ -16,12 +16,11 @@ router.post('/add', (req, res, next) => {
 
 });
 
-router.post('/delete/:id', (req, res, next) => {
+router.get('/delete/:id', (req, res,) => {
   const { id } = req.params;
-
-  Offer.findByIdAndDelete({id})
-  .then((offer)=>{res.redirect('/')})
-  .catch((err)=>{res.redirect('/'), err})
+  Offer.deleteOne({_id: id})
+  .then((offer) => {res.redirect('/')})
+  .catch((err) => {res.redirect('/'), err})
 });
 router.get('/edit/:id', (req, res, next) => {
   Offer.findOne({_id: req.query.offer_id})
