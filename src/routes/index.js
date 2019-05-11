@@ -8,7 +8,7 @@ router.get('/', (req, res, next) => {
       res.render('index', { offers });
     })
 });
-  
+
 router.post('/add', (req, res, next) => {
   const offer = new Offer(req.body);
   offer.save();
@@ -52,7 +52,9 @@ router.post('/signup', passport.authenticate('local-signup', {
 router.get('/signin', (req, res, next) => {
   res.render('signin');
 });
-
+router.get('/new-offer', (req, res, next) => {
+  res.render('new-offer');
+});
 
 router.post('/signin', passport.authenticate('local-signin', {
   successRedirect: '/profile',

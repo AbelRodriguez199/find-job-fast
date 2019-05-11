@@ -13,38 +13,4 @@
         <h3>Tu Id de Usuario</h3>
         <h5><%= user._id%></h5>
     </p>
-    <h2 align="center"><b><u>AQUÍ PUEDES AÑADIR UNA OFERTA DE EMPLEO</u></b></h2>
-    <div class="container">
-            <div class="row">
-          <div class="col-md-6 offset-md-3">
-              <div class="card">
-                  <div class="card-body">
-                      <form action="/add" method="POST">
-                          <div class="form-group">
-                              <input type="text" name="post" placeholder="¿Cual es el puesto?" class="form-control">
-                          </div>
-                          <div class="form-group">
-                              <textarea name="description" placeholder="Describe" cols="80" class="form-control"></textarea>
-                          </div>
-                          <div class="form-group">
-                              <textarea name="requirements" placeholder="Requisitos" cols="80" class="form-control"></textarea>
-                          </div>
-                          <div class="form-group">
-                              <input type="texto" name="salary" placeholder="Salario" class="form-control">
-                          </div>
-                          <div class="form-group">
-                              <input type="date" name="endOffer" placeholder="Fin de Oferta" class="form-control">
-                          </div>
-                          <button type="submit" class="btn btn-primary btn-block">
-                            Añadir Oferta
-                          </button>
-                      </form>
-                  </div>
-              </div>
-          </div>
-          </div>
-      </div>
-</div>
-
-
-<div></div>
+    <a href="/new-offer" class="btn btn-success" role="button" aria-pressed="true">Añadir Oferta nueva</a>

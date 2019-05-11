@@ -1,5 +1,12 @@
 <%- layout('layouts/main') %>
-  <h1 class="mt-4"></h1>
+  <h1 class="mt-4 text-center" ><u><b>MODIFICAR OFERTA</b></u></h1>
+  <h3 class="mt-4 text-center " ><b>¡¡ ADVERTENCIAS !!</b></h3>
+  <div class=" offset-md-3">
+  <ol>
+    <li>La Fecha no puede ser modificada</li>
+    <li>Asegúrate que los cambios sean correctos antes de guardar</li>
+  </ol>
+</div>
 
   <div class="container">
     <div class="row">
@@ -20,7 +27,9 @@
                           <textarea name="requirements" placeholder="Requisitos" cols="80" class="form-control"><%= offer.requirements %></textarea>
                       </div>
                       <div class="form-group">
-                          <input type="texto" name="salary" placeholder="Salario" class="form-control" value="<%= offer.salary %>"></input>
+                          <input type="texto" name="salary" placeholder="Salario" class="form-control" value="<%= offer.salary %>">
+                        </input>
+                      <br>
                       <button type="submit" class="btn btn-primary btn-block">
                         Guardar Cambios
                       </button>
