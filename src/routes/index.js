@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const passport = require('passport');
 const Offer = require('../models/offer');
+const User = require('../models/user');
 
 router.get('/', (req, res, next) => {
   Offer.find()
@@ -40,7 +41,7 @@ router.post('/update/:id', (req, res,) => {
 });
 
 router.get('/signup', (req, res, next) => {
-  res.render('signup');
+  res.render('signup', { message: null });
 });
 
 router.post('/signup', passport.authenticate('local-signup', {
