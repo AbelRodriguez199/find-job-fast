@@ -3,14 +3,38 @@
 <h1>PERFIL</h1>
 
 <div class="card card-body">
+        <p><style type="text/css">
+            b
+            {
+              font-size: 25px;
+              float:right;
+            }
+           </style>
+                <img src="<%= user.avatar %>">
+            </p>
     <h3>Tu Email</h3>
     <h5><%= user.email %></h5>
     <p>
-        <h3>Tu Contraseña</h3>
-        <h5><%= user.password %></h5>
+        <h3>Tu nombre</h3>
+        <h5><%= user.name%></h5>
     </p>
     <p>
-        <h3>Tu Id de Usuario</h3>
-        <h5><%= user._id%></h5>
+        <h3>Tu compañía</h3>
+        <h5><%= user.company %></h5>
     </p>
+    <p>
+            <h3>Tu Puesto</h3>
+            <h5><%= user.position %></h5>
+        </p>
+        <p>
+                <h3>Tu Ciudad</h3>
+                <h5><%= user.city %></h5>
+            </p>
+            <p>
+                    <h3>Tu Teléfono</h3>
+                    <h5><%= user.phone %></h5>
+                </p>
+
+    <a href="/update-user/<%= (user.id) %>" class="btn btn-info mb-4" role="button" aria-pressed="true">Modificar Perfil</a>
     <a href="/new-offer" class="btn btn-success" role="button" aria-pressed="true">Añadir Oferta nueva</a>
+    

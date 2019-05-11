@@ -1,0 +1,46 @@
+<%- layout('layouts/main') %>
+  <h1 class="mt-4 text-center" ><u><b>MODIFICAR USUARIO</b></u></h1>
+
+  <div class="container">
+    <div class="row">
+      <div class="container">
+        <div class="row">
+      <div class="col-md-6 offset-md-3">
+          <div class="card">
+              <div class="card-body">
+                  <form action="/edit-user/<%= user._id %>" method="POST">
+                      <div class="form-group">
+                          <input type="text" name="name" placeholder="Tu Nombre" class="form-control" value="<%= user.name %>"></input>
+                      </div>
+                      <div class="form-group">
+                            <input type="text" name="email" placeholder="Tu E-mail" class="form-control" value="<%= user.email %>"></input>
+                        </div>
+                        <div class="form-group">
+                                <input type="text" name="company" placeholder="Compañia" class="form-control" value="<%= user.company %>"></input>
+                            </div>
+                            <div class="form-group">
+                                    <input type="text" name="avatar" placeholder="Pon una dirección para tu avatar" class="form-control" ></input>
+                                </div>
+                                <div class="form-group">
+                                        <input type="text" name="Position" placeholder="Puesto" class="form-control" value="<%= user.position %>"></input>
+                                    </div>
+                                    <div class="form-group">
+                                            <input type="text" name="city" placeholder="Ciudad" class="form-control" value="<%= user.city %>"></input>
+                                        </div>
+                                        <div class="form-group">
+                                                <input type="text" name="phone" placeholder="Teléfono" class="form-control" value="<%= user.phone %>"></input>
+                                            </div>
+                        
+                      <br>
+                      <button type="submit" class="btn btn-primary btn-block">
+                        Guardar Cambios
+                      </button>
+                  </form>
+              </div>
+          </div>
+      </div>
+      </div>
+    </div>
+    </div>
+    </div>
+  </div>

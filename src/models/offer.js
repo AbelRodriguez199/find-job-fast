@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const User = require('../models/user');
 
 const OfferSchema = new Schema({
     post: {
@@ -22,6 +23,7 @@ const OfferSchema = new Schema({
         type: Date,
         default: Date.now
       },
+    user: { type: Schema.Types.ObjectId, ref: "User" }
 });
 
-module.exports = mongoose.model('offers', OfferSchema);
+module.exports = mongoose.model('offer', OfferSchema);

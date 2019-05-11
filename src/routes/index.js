@@ -39,6 +39,21 @@ router.post('/update/:id', (req, res,) => {
   .then((offer) => {res.redirect('/')})
   .catch((err) => {res.redirect('/'), err})
 });
+router.get('/update-user/:id', (req, res, next) => {
+  const { id } = req.params;
+  const user = User.findById(id)
+  .then((user) => {
+    res.render("update-user", {user});
+  })
+  .catch((error) => {
+    console.log(error);
+  })
+});router.post('/edit-user/:id', (req, res,) => {
+  const { id } = req.params;
+  User.update({_id: id}, req.body)
+  .then((user) => {res.redirect('/profile')})
+  .catch((err) => {res.redirect('/'), err})
+});
 
 router.get('/signup', (req, res, next) => {
   res.render('signup', { message: null });
@@ -56,6 +71,14 @@ router.get('/signin', (req, res, next) => {
 router.get('/new-offer', (req, res, next) => {
   res.render('new-offer');
 });
+router.get('/new-offer', (req, res, next) => {
+  Offer.find({}, function(err, offers){
+    User.populate(offers, {path: "user"},function(err,offers){
+      res.status(200).send(offers)
+    })
+  })
+  res.render('new-offer');
+});
 
 router.post('/signin', passport.authenticate('local-signin', {
   successRedirect: '/profile',
@@ -65,6 +88,13 @@ router.post('/signin', passport.authenticate('local-signin', {
 
 router.get('/profile',isAuthenticated, (req, res, next) => {
   res.render('profile');
+});
+
+router.get('/my-offers',isAuthenticated, (req, res, next) => {
+  Offer.find({user:req.user._id})
+    .then(function(offers) {
+      res.render('my-offers', { offers });
+    })
 });
 
 router.get('/logout', (req, res, next) => {
