@@ -62,7 +62,7 @@ router.get('/signup', (req, res, next) => {
 router.post('/signup', passport.authenticate('local-signup', {
   successRedirect: '/profile',
   failureRedirect: '/signup',
-  failureFlash: true
+  failureFlash: 'Invalid username or password.'
 })); 
 
 router.get('/signin', (req, res, next) => {

@@ -1,46 +1,59 @@
 <%- layout('layouts/main') %>
-  <h1 class="mt-4 text-center" ><u><b>MODIFICAR USUARIO</b></u></h1>
-
-  <div class="container">
-    <div class="row">
-      <div class="container">
-        <div class="row">
-      <div class="col-md-6 offset-md-3">
-          <div class="card">
-              <div class="card-body">
-                  <form action="/edit-user/<%= user._id %>" method="POST">
-                      <div class="form-group">
-                          <input type="text" name="name" placeholder="Tu Nombre" class="form-control" value="<%= user.name %>"></input>
-                      </div>
-                      <div class="form-group">
-                            <input type="text" name="email" placeholder="Tu E-mail" class="form-control" value="<%= user.email %>"></input>
-                        </div>
-                        <div class="form-group">
-                                <input type="text" name="company" placeholder="Compañia" class="form-control" value="<%= user.company %>"></input>
-                            </div>
-                            <div class="form-group">
-                                    <input type="text" name="avatar" placeholder="Pon una dirección para tu avatar" class="form-control" ></input>
-                                </div>
-                                <div class="form-group">
-                                        <input type="text" name="Position" placeholder="Puesto" class="form-control" value="<%= user.position %>"></input>
+  <div class="card">
+        <div class="card-header">
+          <ul class="nav nav-tabs card-header-tabs">
+            <li class="nav-item">
+              <a class="nav-link" href="/profile">Mi Perfil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="/update-user/<%= (user.id) %>">Modificar Perfil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/new-offer">Añadir Nueva Oferta</a>
+            </li>
+          </ul>
+        </div>
+        <div class="container">
+                <div class="row">
+                  <div class="container">
+                    <div class="row">
+                  <div class="col-md-6 offset-md-3">
+                      <div class="card">
+                          <div class="card-body">
+                              <form action="/edit-user/<%= user._id %>" method="POST">
+                                <h1 class="mt-4 text-center" ><u><b>MODIFICAR USUARIO</b></u></h1>
+                                  <div class="form-group">
+                                      <input type="text" name="name" placeholder="Tu Nombre" class="form-control" value="<%= user.name %>"></input>
+                                  </div>
+                                  <div class="form-group">
+                                        <input type="text" name="email" placeholder="Tu E-mail" class="form-control" value="<%= user.email %>"></input>
                                     </div>
                                     <div class="form-group">
-                                            <input type="text" name="city" placeholder="Ciudad" class="form-control" value="<%= user.city %>"></input>
+                                            <input type="text" name="company" placeholder="Compañia" class="form-control" value="<%= user.company %>"></input>
                                         </div>
                                         <div class="form-group">
-                                                <input type="text" name="phone" placeholder="Teléfono" class="form-control" value="<%= user.phone %>"></input>
+                                                <input type="text" name="avatar" placeholder="Pon una dirección para tu avatar" class="form-control" value="<%= user.avatar %>"></input>
                                             </div>
-                        
-                      <br>
-                      <button type="submit" class="btn btn-primary btn-block">
-                        Guardar Cambios
-                      </button>
-                  </form>
+                                            <div class="form-group">
+                                                    <input type="text" name="position" placeholder="Puesto" class="form-control" value="<%= user.position %>"></input>
+                                                </div>
+                                                <div class="form-group">
+                                                        <input type="text" name="city" placeholder="Ciudad" class="form-control" value="<%= user.city %>"></input>
+                                                    </div>
+                                                    <div class="form-group">
+                                                            <input type="text" name="phone" placeholder="Teléfono" class="form-control" value="<%= user.phone %>"></input>
+                                                        </div>
+                                    
+                                  <br>
+                                  <button type="submit" class="btn btn-primary btn-block">
+                                    Guardar Cambios
+                                  </button>
+                              </form>
+                          </div>
+                      </div>
+                  </div>
+                  </div>
+                </div>
+                </div>
+                </div>
               </div>
-          </div>
-      </div>
-      </div>
-    </div>
-    </div>
-    </div>
-  </div>

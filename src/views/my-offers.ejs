@@ -20,7 +20,7 @@
                 <td class="mb-2"><%= (offers[i].description) %></td>
                 <td class="mb-2"><%= (offers[i].requirements) %></td>
                 <td class="mb-2"><%= (offers[i].salary) %></td>
-                <td class="mb-2"><%= (offers[i].endOffer ? offers[i].endOffer.toLocaleDateString() : '')%></td>
+                <td class="mb-2"><%= (offers[i].endOffer ? offers[i].endOffer.toLocaleString() : '')%></td>
                 <td>
                     
                   <a href="/edit/<%= (offers[i].id) %>" class="btn btn-info mb-1">Editar</a>

@@ -7,11 +7,12 @@ const { Schema } = mongoose;
 const userSchema = new Schema({
   name: {
     type: String,
-    default:"Nombre"
+    default:""
   },
   avatar: {
     type: String,
-    match: [URL_REGEX, 'Url Inválida']
+    match: [URL_REGEX, 'Url Inválida'],
+    default: "https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2F40.media.tumblr.com%2Fe95a5ec853f0b8fe165171dd179761a0%2Ftumblr_mmsanyJn0d1s2195yo1_500.png&f=1"
   },
   email: {
     type: String,
@@ -26,19 +27,19 @@ const userSchema = new Schema({
 },
   company: {
   type: String,
-  default: "Compañia"
+  default: ""
 },
   position: {
     type: String,
-    default: "Puesto"
+    default: ""
   },
   city: {
     type: String,
-    default: "Ciudad"
+    default: ""
   },
   phone: {
     type: String,
-    default: "Teléfono"
+    default: ""
   },
 });
 
