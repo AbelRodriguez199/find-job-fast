@@ -14,7 +14,7 @@ require('./passport/local-auth');
 // settings
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'))
-app.engine('ejs', engine);
+app.engine('ejs-mate', engine);
 app.set('view engine', 'ejs');
 
 // middlewares
